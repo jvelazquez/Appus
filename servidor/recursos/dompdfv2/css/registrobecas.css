@@ -1,0 +1,133 @@
+body{
+font-weight:normal;color:#000000;font-size:15px;font-family:arial, helvetica, sans-serif;
+}
+
+body.dos{
+font-weight:normal;color:#000000;font-size:12px;font-family:arial, helvetica, sans-serif;
+}
+
+#page-wrap {
+	width:700px;
+	margin:0 auto;
+	margin-top: 30px;
+}
+
+
+#header{
+	 align-content: center;
+}
+#header h3{
+font-size: 13px;
+font-family: arial;
+}
+
+ul#header2 {
+	top:0px;
+	height: 150px;
+	list-style: none;
+}
+
+#footer{
+position: relative;
+margin-top:35px; /* altura en px del footer con valor negativo */
+height: 50px; /* Altura del Footer en px*/
+clear: both;
+text-align: center;
+
+}
+.textfooter
+{
+font-weight:normal;
+color:#000000;
+font-size:10px;
+text-align:center;
+font-family:arial, helvetica, sans-serif;
+}
+/*---------------------------------
+#firma_izquierda
+{
+width: 300px;  
+float:left;
+
+}
+
+#firma_derecha{
+width: 300px;  
+float:right; 
+
+*/
+.reg {text-transform:uppercase}
+.f_left, .fleft{float:left}
+.f_right, .fright{float:right}
+.align_right, .alignright {text-align:right}
+.align_center , .aligncenter {text-align:center}
+
+.italic{font-style:italic}
+.letter {letter-spacing:-1px}
+
+.centro{
+	margin-top:80px;
+	width:960px;
+}
+
+ul{
+       list-style:none;
+       }
+
+#principal{ 
+   
+}
+#principal th
+{
+padding: 3px;
+font-size:16px;
+}
+
+#principal td{
+padding: 3px;
+}
+.ttl{
+	background-color:#864165;
+}
+
+.ncl{
+	padding: 3px;
+	font-size:13px;
+	color:black;
+}
+
+
+.tg {
+border-collapse: separate;
+margin-top: 80px;
+position:absolute;
+width:800px;
+height:25px;
+left: 19px;
+top: 52px;
+text-align: center;
+font-size:12px;
+padding:0px 5px;
+border-style:solid;
+border-width:0px; 
+}
+
+.tg td{
+font-family:Arial, sans-serif;
+font-size:12px;
+padding:0px 5px;
+border-style:solid;
+border-width:1px;
+overflow:hidden;
+word-break:normal;
+background-color: #fff;
+border-color: #000;
+color:#000;
+}
+
+
+
+.tg .tg-aaj1{font-size:10px;background-color:#000000}
+.tg .tg-hv6p{background-color:#000000;color:#fff;text-align: left;}
+.tg .tg-031e{color:#000;}
+
