@@ -5,7 +5,7 @@
     version   = "1.0.0">
 
 <name>AppUs</name>
-<icon src="imagenes/icono_flatus.png" gap:platform="android" gap:density="ldpi" />
+<icon src="images/icono_flatus.png" gap:platform="android" gap:density="ldpi" />
 <description>
 Aplicacion movil de servicios escolares de la Universidad del Sur. 
 </description>
