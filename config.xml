@@ -4,7 +4,7 @@
     id        = "com.phonegap.example"
     version   = "1.0.0">
 
-<name>PhoneGap Build Application</name>
+<name>AppUs</name>
 
 <description>
 A simple PhoneGap Build application.
