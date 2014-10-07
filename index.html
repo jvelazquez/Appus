@@ -27,7 +27,7 @@ var  formData = $("#login").serialize(); //Name value Pair
 	   
          type: 'POST',
             dataType: 'json',
-            url:'servidor/validacion.php',
+            url:'http://187.188.173.10/appus/servidor/validacion.php',
             data: formData,
 	   
         }).done(function(respuesta){
@@ -35,11 +35,7 @@ var  formData = $("#login").serialize(); //Name value Pair
 			$.mobile.showPageLoadingMsg('hide');
 			
 	   		window.localStorage["iduser"] =respuesta.idalumno;
-			
-			
-			
-			
-			window.location.href = 'http://187.188.173.10/appus/principal.html';
+			window.location.href = 'principal.html';
 			//$(location).href('http://187.188.173.10/appus/inicio.html')
 		}
 	   else{

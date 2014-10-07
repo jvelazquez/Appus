@@ -5,12 +5,12 @@
     version   = "1.0.0">
 
 <name>AppUs</name>
-<icon src="imagenes/appus.png" gap:platform="android" gap:density="ldpi" />
+<icon src="imagenes/icono_flatus.png" gap:platform="android" gap:density="ldpi" />
 <description>
-App de servicios escolares de la Universidad del Sur para Alumnos. 
+Aplicacion movil de servicios escolares de la Universidad del Sur. 
 </description>
 
-<author href="https://example.com" email="jesus_velazquez89@hotmail.com">
+<author href="https://www.universidaddelsur.edu.mx" email="jesus_velazquez89@hotmail.com">
 Jesus Velazquez Diaz
 </author>
 
