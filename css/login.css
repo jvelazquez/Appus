@@ -42,11 +42,12 @@ input.oculto{
 }
 
 #login {
-	margin: 50px auto;
-	width: 400px;
+	margin: 0px auto 50px auto;
+	width: 100%;
 }
 
 #login h2 {
+	width:95%;
 	background-color: #f95252;
 	-webkit-border-radius: 20px 20px 0 0;
 	-moz-border-radius: 20px 20px 0 0;
@@ -86,8 +87,8 @@ input.oculto{
 #login fieldset input[type="text"], #login fieldset input[type="password"] {
 	background-color: #eee;
 	color: #777;
-	padding: 4px 10px;
-	width: 328px;
+	padding: 4px 5%;
+	width: 90%;
 }
 
 #login fieldset input[type="submit"] {
@@ -101,4 +102,17 @@ input.oculto{
 
 #login fieldset input[type="submit"]:hover {
 	background-color: #28ad63;
+}
+
+.profile.text-center {
+	width:98%;
+	margin:0 auto;
+}
+.profile.text-center h2.titulo{
+	width: 60%;
+margin: 10px auto 0 auto;
+height: 125px;
+display: inline-block;
+background: url(../images/profile-pic.png) no-repeat 0px 0px;
+background-size: 10%;
 }
