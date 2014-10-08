@@ -22,30 +22,26 @@ var  formData = $("#login").serialize(); //Name value Pair
 	   
          type: 'POST',
             dataType: 'json',
-            url:'http://187.188.173.10/AppUs/validacion.php',
+            url:'http://187.188.173.10/AppUs/servidor/validacion.php',
             data: formData,
-	   
-        }).done(function(respuesta){
-	    alertDialog1.setMessage("Welcome to 9Android.net");
+
 	   	
-	   	
-	   	
-	   //	if(respuesta.mensaje == "ok"){
+	   	if(respuesta.mensaje == "ok"){
 			//$.mobile.showPageLoadingMsg('hide');
 			
-	   	//	window.localStorage["iduser"] =respuesta.idalumno;
+	   		window.localStorage["iduser"] =respuesta.idalumno;
 			
 			
 			
 			
-		//	window.location.href = 'principal.html';
+		window.location.href = 'principal.html';
 			//$(location).href('http://187.188.173.10/appus/inicio.html')
-		//}
-	   //else{
+	}
+	   else{
 		 $.mobile.showPageLoadingMsg('hide');
 			
 	   	//alert("Error de login");
-        // alert(respuesta.mensaje + "\nGenerado en: ")
+        alert(respuesta.mensaje + "\nGenerado en: ")
 	   }
           //$("#mensaje").html(respuesta.mensaje);
         });
