@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jnlp href="launch.jnlp" spec="1.0+">
+    <information>
+        <title>registros</title>
+        <vendor>SkyDevelopments</vendor>
+        <homepage href="www.skydevelopments.net"/>
+        <description>registros</description>
+        <description kind="short">registros</description>
+        
+        
+    </information>
+    <update check="always"/>
+    <security>
+<all-permissions/>
+</security>
+    <resources>
+        <j2se java-vm-args="-Djava.security.policy=applet.policy" version="1.6+"/>
+        <jar href="https://www.universidaddelsur.edu.mx/igsi/recursos/capturas.jar" main="true"/>
+        
+        
+<jar href="https://www.universidaddelsur.edu.mx/igsi/recursos/lib/dpfpenrollment.jar"/>
+<jar href="https://www.universidaddelsur.edu.mx/igsi/recursos/lib/dpfpverification.jar"/>
+<jar href="https://www.universidaddelsur.edu.mx/igsi/recursos/lib/dpotapi.jar"/>
+<jar href="https://www.universidaddelsur.edu.mx/igsi/recursos/lib/dpotjni.jar"/>
+<jar href="https://www.universidaddelsur.edu.mx/igsi/recursos/lib/mysql-connector-java-5.1.13-bin.jar"/>
+</resources>
+    <applet-desc height="450" main-class="skydevelopments.net.captura" name="registros" width="350">
+        
+    </applet-desc>
+</jnlp>

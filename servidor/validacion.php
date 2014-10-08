@@ -1,26 +1,41 @@
 <?php
-include("recursos/config.php");
-session_start();
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
+header('Access-Control-Max-Age: 1000');
+header('Access-Control-Allow-Headers: Content-Type');
 
-$_SESSION["mo"] = 0;
+//include("recursos/config.php");
+include("recursos/conectar.php");
+//session_start();
+
+//$_SESSION["mo"] = 0;
 
 
-$usu=filtra( $_POST["usuario"]);
-$pass=filtra( $_POST["password"]);
-$md5=filtra( $_POST["md5"]);
+$usu= $_POST["usuario"];
+$pass=$_POST["password"];
+$md5=$_POST["md5"];
 $contrase_md5=md5($md5);
 
 
 
-$dato_usuario=sql_qfr("SELECT * FROM  login_alumnos WHERE usuario like '$usu' and pass like '$contrase_md5'");
+$dato_usuario="SELECT * FROM  login_alumnos WHERE usuario like '$usu' and pass like '$contrase_md5'";
+//echo $dato_usuario;
+$result=mysql_query($dato_usuario,$conex);
+$fila=mysql_fetch_array($result);
+
+
 //echo ("SELECT * FROM  login_alumnos WHERE usuario like '$usu' and pass like '$contrase_md5'");
 $respuesta = new stdClass();
 
 
-if($dato_usuario)
+
+
+
+if($fila)
 {
+	//echo "ok";
 	$respuesta->mensaje = "ok";
-	$respuesta->idalumno = $dato_usuario[9];
+	$respuesta->idalumno = $fila[9];
 				
 }
 else{
