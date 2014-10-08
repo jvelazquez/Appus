@@ -26,21 +26,31 @@ var  formData = $("#login").serialize(); //Name value Pair
             data: formData,
 	   
         }).done(function(respuesta){
-	   	if(respuesta.mensaje == "ok"){
-			$.mobile.showPageLoadingMsg('hide');
+	   	
+	   	 navigator.notification.alert(
+        'Eres el ganador!',     // mensaje (message)
+        'Game Over',            // titulo (title)
+        'Cerrar'                // nombre del botón (buttonName)
+        );
+	   	
+	   	
+	   	
+	   	
+	   //	if(respuesta.mensaje == "ok"){
+			//$.mobile.showPageLoadingMsg('hide');
 			
-	   		window.localStorage["iduser"] =respuesta.idalumno;
+	   	//	window.localStorage["iduser"] =respuesta.idalumno;
 			
 			
 			
 			
-			window.location.href = 'principal.html';
+		//	window.location.href = 'principal.html';
 			//$(location).href('http://187.188.173.10/appus/inicio.html')
-		}
-	   else{
-		   $.mobile.showPageLoadingMsg('hide');
+		//}
+	   //else{
+		 $.mobile.showPageLoadingMsg('hide');
 			
-	   	alert("Error de login");
+	   	//alert("Error de login");
         // alert(respuesta.mensaje + "\nGenerado en: ")
 	   }
           //$("#mensaje").html(respuesta.mensaje);
