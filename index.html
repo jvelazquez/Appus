@@ -26,13 +26,7 @@ var  formData = $("#login").serialize(); //Name value Pair
             data: formData,
 	   
         }).done(function(respuesta){
-	   	
-	   	 navigator.notification.alert(
-        'Eres el ganador!',     // mensaje (message)
-        'Game Over',            // titulo (title)
-        'Cerrar'                // nombre del botón (buttonName)
-        );
-	   	
+	    alertDialog1.setMessage("Welcome to 9Android.net");
 	   	
 	   	
 	   	
