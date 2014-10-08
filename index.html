@@ -23,6 +23,7 @@
 $(document).ready( function(){
 
 $("#btn_enviar").click(function(){
+	alert("Error de login");
 	$.mobile.showPageLoadingMsg("a", "Cargando");
 			
 enviaMD5() 
@@ -31,26 +32,34 @@ var  formData = $("#login").serialize(); //Name value Pair
 	   
          type: 'POST',
             dataType: 'json',
+<<<<<<< HEAD
             url:'servidor/validacion.php',
+=======
+            url:'http://187.188.173.10/AppUs/servidor/validacion.php',
+>>>>>>> origin/appus
             data: formData,
-	   
-        }).done(function(respuesta){
+
+	   	
 	   	if(respuesta.mensaje == "ok"){
-			$.mobile.showPageLoadingMsg('hide');
+			//$.mobile.showPageLoadingMsg('hide');
 			
 	   		window.localStorage["iduser"] =respuesta.idalumno;
 			
 			
 			
 			
+<<<<<<< HEAD
 			window.location.href = 'principal.html';
+=======
+		window.location.href = 'principal.html';
+>>>>>>> origin/appus
 			//$(location).href('http://187.188.173.10/appus/inicio.html')
-		}
+	}
 	   else{
-		   $.mobile.showPageLoadingMsg('hide');
+		 $.mobile.showPageLoadingMsg('hide');
 			
-	   	alert("Error de login");
-        // alert(respuesta.mensaje + "\nGenerado en: ")
+	   	//alert("Error de login");
+        alert(respuesta.mensaje + "\nGenerado en: ")
 	   }
           //$("#mensaje").html(respuesta.mensaje);
         });
@@ -115,3 +124,8 @@ function enviaMD5(hash)
 	</body>
 </html>
 
+<<<<<<< HEAD
+=======
+</body>
+</html>
+>>>>>>> origin/appus
