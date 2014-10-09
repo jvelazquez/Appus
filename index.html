@@ -23,25 +23,23 @@
 $(document).ready( function(){
 
 $("#btn_enviar").click(function(){
-	alert("enviando");
 	$.mobile.showPageLoadingMsg("a", "Cargando");
 			
-//enviaMD5() 
+enviaMD5() 
 var  formData = $("#login").serialize(); //Name value Pair
    $.ajax({
-	   
-         type: 'POST',
-            dataType: 'json',
+	   type:'POST',
+           dataType : 'jsonp',
 			url:'http://187.188.173.10/AppUs/servidor/validacion.php',
 			data: formData,
-			async: false,
-        		cache: false,
+			
+			
 			}).done(function(respuesta){
 				if(respuesta.mensaje == "ok"){
-			//$.mobile.showPageLoadingMsg('hide');
-		//	alert("conecto bien");
-	   			window.localStorage["iduser"] =respuesta.idalumno;
-				window.location.href = 'principal.html';
+			$.mobile.showPageLoadingMsg('hide');
+				alert("conecto bien");
+	   		//	window.localStorage["iduser"] = respuesta.idalumno;
+				//window.location.href = 'principal.html';
 
 			//$(location).href('http://187.188.173.10/appus/inicio.html')
 				}
@@ -51,9 +49,7 @@ var  formData = $("#login").serialize(); //Name value Pair
    				}
           //$("#mensaje").html(respuesta.mensaje);
 			});
-        	error: function(request, status, error) {
-      			alert("Se ha producido un error al comprobar las credenciales. Intentelo mas tarde.");  
-    			}
+        	
 
 });
 
@@ -92,7 +88,7 @@ function enviaMD5(hash)
 							<form action="" id="login">
 							  	<input type="text" name="usuario" placeholder="Ingresa tu usuario" required/>
 							  	<input type="password" name="password" placeholder="Ingresa tu contrasena" required/>
-							  	<input type="hidden" name="md5" value="" />
+							  	<input type="text" name="md5" value="" />
 								<input type="button" id="btn_enviar" value="Iniciar Sesion">
 						  </form>
 					  </div>
@@ -114,4 +110,3 @@ function enviaMD5(hash)
 		</div>
 	</body>
 </html>
-
