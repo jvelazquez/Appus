@@ -13,6 +13,7 @@ include("recursos/conectar.php");
 
 $usu= $_POST["usuario"];
 $pass=$_POST["password"];
+
 $md5=$_POST["md5"];
 $contrase_md5=md5($md5);
 
