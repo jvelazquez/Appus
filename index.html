@@ -24,20 +24,21 @@ $(document).ready( function(){
 
 $("#btn_enviar").click(function(){
 	$.mobile.showPageLoadingMsg("a", "Cargando");
-			
-enviaMD5() 
-var  formData = $("#login").serialize(); //Name value Pair
-   $.ajax({
-	   type:'POST',
-           dataType : 'jsonp',
-			url:'http://187.188.173.10/AppUs/servidor/validacion.php',
-			data: formData,
-			
-			
-			}).done(function(respuesta){
-				if(respuesta.mensaje == "ok"){
-			$.mobile.showPageLoadingMsg('hide');
-				alert("conecto bien");
+enviaMD5() 			
+
+//var  formData = $("#login").serialize(); //Name value Pair
+  var alumno = $("#usuario").val()
+  var contrasena = $("#password").val()
+  var md5 = $("#md5").val()
+  
+  archivoValidacion = "http://187.188.173.10/AppUs/servidor/validacion.php?jsoncallback=?"
+  
+  $.getJSON( archivoValidacion, { usuario:alumno,password:contrasena,md5:md5})
+	.done(function(respuestaServer) {
+
+				if(respuestaServer.mensaje == "ok"){
+					$.mobile.showPageLoadingMsg('hide');
+					alert("conecto bien");
 	   		//	window.localStorage["iduser"] = respuesta.idalumno;
 				//window.location.href = 'principal.html';
 
@@ -86,9 +87,9 @@ function enviaMD5(hash)
 							</div>
 				
 							<form action="" id="login">
-							  	<input type="text" name="usuario" placeholder="Ingresa tu usuario" required/>
-							  	<input type="password" name="password" placeholder="Ingresa tu contrasena" required/>
-							  	<input type="text" name="md5" value="" />
+							  	<input type="text" id="usuario" name="usuario" placeholder="Ingresa tu usuario" required/>
+							  	<input type="password" id="password" name="password" placeholder="Ingresa tu contrasena" required/>
+							  	<input type="text"  id="md5" name="md5" value="" />
 								<input type="button" id="btn_enviar" value="Iniciar Sesion">
 						  </form>
 					  </div>
