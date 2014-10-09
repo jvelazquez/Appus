@@ -35,9 +35,11 @@ enviaMD5()
   
   $.getJSON( archivoValidacion, { usuario:alumno,password:contrasena,md5:md5})
 	.done(function(respuestaServer) {
+		
+		alert("bien");
 
 				if(respuestaServer.mensaje == "ok"){
-					$.mobile.showPageLoadingMsg('hide');
+					//$.mobile.showPageLoadingMsg('hide');
 					alert("conecto bien");
 	   		//	window.localStorage["iduser"] = respuesta.idalumno;
 				//window.location.href = 'principal.html';
@@ -45,7 +47,7 @@ enviaMD5()
 			//$(location).href('http://187.188.173.10/appus/inicio.html')
 				}
 	   			else{
-		 			$.mobile.showPageLoadingMsg('hide');
+		 		//	$.mobile.showPageLoadingMsg('hide');
 					alert("Error de login");
    				}
           //$("#mensaje").html(respuesta.mensaje);
