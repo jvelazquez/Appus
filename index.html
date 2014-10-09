@@ -21,7 +21,7 @@
 		
 <script>
 $(document).ready( function(){
-
+	document.addEventListener("deviceready", setOverrideBackbutton, false);
 $("#btn_enviar").click(function(){
 	$.mobile.showPageLoadingMsg("a", "Cargando");
 enviaMD5() 			
@@ -41,6 +41,13 @@ enviaMD5()
 				if(respuestaServer.mensaje == "ok"){
 					//$.mobile.showPageLoadingMsg('hide');
 					alert("conecto bien");
+					
+					
+					
+					function successCreate() {
+    $.mobile.changePage('principal.html','slide');
+}
+
 	   		//	window.localStorage["iduser"] = respuesta.idalumno;
 				//window.location.href = 'principal.html';
 
