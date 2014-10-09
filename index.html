@@ -34,28 +34,26 @@ var  formData = $("#login").serialize(); //Name value Pair
             dataType: 'json',
 			url:'http://187.188.173.10/AppUs/servidor/validacion.php',
 			data: formData,
+			async: false,
+        		cache: false,
 			}).done(function(respuesta){
-				alert("conecto bien");
-	if(respuesta.mensaje == "ok"){
+				if(respuesta.mensaje == "ok"){
 			//$.mobile.showPageLoadingMsg('hide');
 		//	alert("conecto bien");
-	   		window.localStorage["iduser"] =respuesta.idalumno;
-			
-			
-			
-
-			window.location.href = 'principal.html';
+	   			window.localStorage["iduser"] =respuesta.idalumno;
+				window.location.href = 'principal.html';
 
 			//$(location).href('http://187.188.173.10/appus/inicio.html')
-	}
-	   else{
-		 $.mobile.showPageLoadingMsg('hide');
-			
-	   	alert("Error de login");
-   
-	   }
+				}
+	   			else{
+		 			$.mobile.showPageLoadingMsg('hide');
+					alert("Error de login");
+   				}
           //$("#mensaje").html(respuesta.mensaje);
-        });
+			});
+        	error: function(request, status, error) {
+      			alert("Se ha producido un error al comprobar las credenciales. Intentelo mas tarde.");  
+    			}
 
 });
 
