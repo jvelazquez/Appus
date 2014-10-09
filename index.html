@@ -31,7 +31,7 @@ enviaMD5()
   var contrasena = $("#password").val()
   var md5 = $("#md5").val()
   
-  archivoValidacion = "http://187.188.173.10/AppUs/servidor/validacion.php?jsoncallback=?"
+  archivoValidacion = "https://www.universidaddelsur.edu.mx/AppUS/servidor/validacion.php?jsoncallback=?"
   
   $.getJSON( archivoValidacion, { usuario:alumno,password:contrasena,md5:md5})
 	.done(function(respuestaServer) {
