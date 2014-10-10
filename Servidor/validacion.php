@@ -3,36 +3,51 @@
 /* Define los valores que seran evaluados, en este ejemplo son valores estaticos,
 en una verdadera aplicacion generalmente son dinamicos a partir de una base de datos */
  
-$usuarioValido = "igsi";
-$passwordValido = "movil";
- 
-/* Extrae los valores enviados desde la aplicacion movil */
-$usuarioEnviado = $_GET['usuario'];
-$passwordEnviado = $_GET['password'];
- 
-/* crea un array con datos arbitrarios que seran enviados de vuelta a la aplicacion */
+include("recursos/conectar.php");
+include("recursos/config.php");
+//session_start();
+
+//$_SESSION["mo"] = 0;
+
+
+$usuario=$_GET["usuario"];
+$pass=$_GET["password"];
+$md5=$_GET["md5"];
+$contrase_md5= md5($md5);
+
+
+
+$dato_usuario="SELECT * FROM  login_alumnos WHERE usuario like '$usuario' and pass like '$contrase_md5'";
+//Echo $dato_usuario;
+
+
+$result=mysql_query($dato_usuario,$conex);
+$fila=mysql_fetch_array($result);
+
+
+//echo ("SELECT * FROM  login_alumnos WHERE usuario like '$usu' and pass like '$contrase_md5'");
+
+
+
 $resultados = array();
-$resultados["hora"] = date("F j, Y, g:i a");
-$resultados["generador"] = "Enviado desde SVR-PRO.mobi" ;
- 
- 
-/* verifica que el usuario y password concuerden correctamente */
-if( $usuarioEnviado == $usuarioValido && $passwordEnviado == $passwordValido ){
-/*esta informacion se envia solo si la validacion es correcta */
-$resultados["mensaje"] = "Validacion Correcta";
-$resultados["validacion"] = "ok";
- 
-}else{
-/*esta informacion se envia si la validacion falla */
-$resultados["mensaje"] = "Usuario y password incorrectos";
-$resultados["validacion"] = "error";
+if($fila)
+{
+	//echo "ok";
+	$resultados["mensaje"] = "ok";
+	$resultados["idalumno"] = $fila[9];
+				
 }
- 
- 
-/*convierte los resultados a formato json*/
+else{
+	$resultados["mensaje"] =  "null";
+
+}
+ /*convierte los resultados a formato json*/
 $resultadosJson = json_encode($resultados);
- 
+ //echo json_encode($respuesta);
 /*muestra el resultado en un formato que no da problemas de seguridad en browsers */
-echo $_GET['jsoncallback'] . '(' . $resultadosJson . ');';
+echo $_GET['jsoncallback'].'('.$resultadosJson.');';
  
 ?>
+
+
+
